@@ -60,11 +60,11 @@ export function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-sm text-muted-foreground">
                                 <MapPin className="h-5 w-5 text-primary shrink-0" />
-                                <span>Sector 88, Mohali,<br />Punjab, 140308</span>
+                                <span>SCO 15, Preet City, opp. water tank,<br />Sector 86, Sahibzada Ajit Singh Nagar,<br />Punjab 140308</span>
                             </li>
                             <li className="flex items-center gap-3 text-sm text-muted-foreground">
                                 <Phone className="h-4 w-4 text-primary shrink-0" />
-                                <span>+91 98765 43210</span>
+                                <span>+91 97003 30076</span>
                             </li>
                             <li className="flex items-center gap-3 text-sm text-muted-foreground">
                                 <Mail className="h-4 w-4 text-primary shrink-0" />

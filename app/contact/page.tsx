@@ -18,12 +18,12 @@ export default function ContactPage() {
                                 <MapPin className="w-6 h-6 text-primary mt-1" />
                                 <div>
                                     <p className="font-medium text-white">Salvo Shooters Arena</p>
-                                    <p className="text-neutral-400">Sector 88, Mohali, Punjab, 140308</p>
+                                    <p className="text-neutral-400">SCO 15, Preet City, opp. water tank, Sector 86, Sahibzada Ajit Singh Nagar, Punjab 140308</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
                                 <Phone className="w-6 h-6 text-primary" />
-                                <p className="text-neutral-400">+91 98765 43210</p>
+                                <p className="text-neutral-400">+91 97003 30076</p>
                             </div>
                             <div className="flex items-center gap-4">
                                 <Mail className="w-6 h-6 text-primary" />
