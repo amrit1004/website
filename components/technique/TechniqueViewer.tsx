@@ -77,22 +77,20 @@ export function TechniqueViewer({ technique }: TechniqueViewerProps) {
                         key={step.id}
                         className="scroll-mt-32 min-h-[60vh] flex flex-col justify-center"
                     >
-                        <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                            <span className="text-primary text-xl font-mono">0{technique.steps.indexOf(step) + 1}</span>
+                        <h2 className="text-3xl font-bold text-[#1e3a5f] mb-6 flex items-center gap-4">
+                            <span className="text-[#3d79ad] text-xl font-mono">0{technique.steps.indexOf(step) + 1}</span>
                             {step.title.replace(/^\d+\.\s*/, '')}
                         </h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+                        <p className="text-xl text-[#1e3a5f]/60 leading-relaxed max-w-xl">
                             {step.description}
                         </p>
 
                         {/* Mobile-only Image display since sticky panel is hidden */}
-                        <div className="lg:hidden mt-8 aspect-video bg-neutral-900 rounded-lg overflow-hidden border border-white/10 relative">
-                            <div className="absolute inset-0 flex items-center justify-center text-neutral-700">
+                        <div className="lg:hidden mt-8 aspect-video bg-[#e8f0f8] rounded-lg overflow-hidden border border-[#ccddf0] relative">
+                            <div className="absolute inset-0 flex items-center justify-center text-[#1e3a5f]/40">
                                 {/* Placeholder for animation */}
                                 <span className="text-xs uppercase tracking-widest">Animation: {step.title}</span>
                             </div>
-                            {/* Use the mock image path */}
-                            {/* <Image src={step.image} alt={step.title} fill className="object-cover opacity-50" /> */}
                         </div>
                     </section>
                 ))}
@@ -100,7 +98,7 @@ export function TechniqueViewer({ technique }: TechniqueViewerProps) {
 
             {/* Right: Sticky Animation Panel */}
             <div className="hidden lg:block w-[400px] xl:w-[500px] h-[calc(100vh-8rem)] sticky top-32">
-                <div className="bg-neutral-900 rounded-2xl border border-white/10 h-full overflow-hidden relative shadow-2xl">
+                <div className="bg-[#e8f0f8] rounded-2xl border border-[#ccddf0] h-full overflow-hidden relative shadow-xl">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeStepData.id}
@@ -110,14 +108,14 @@ export function TechniqueViewer({ technique }: TechniqueViewerProps) {
                             transition={{ duration: 0.4 }}
                             className="absolute inset-0 flex items-center justify-center p-8"
                         >
-                            {/* This is where the Rive/Lottie animation would live. 
+                            {/* This is where the Rive/Lottie animation would live.
                    For now, a placeholder system. */}
-                            <div className="w-full h-full border-2 border-dashed border-white/10 rounded-xl flex flex-col items-center justify-center bg-black/50">
-                                <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-4 animate-pulse">
+                            <div className="w-full h-full border-2 border-dashed border-[#1e3a5f]/20 rounded-xl flex flex-col items-center justify-center bg-white/50">
+                                <div className="w-20 h-20 rounded-full bg-[#1e3a5f]/10 flex items-center justify-center mb-4 animate-pulse">
                                     <span className="text-3xl">🎯</span>
                                 </div>
-                                <h3 className="text-primary font-bold text-lg mb-2">{activeStepData.title}</h3>
-                                <p className="text-sm text-neutral-500 text-center px-8">
+                                <h3 className="text-[#1e3a5f] font-bold text-lg mb-2">{activeStepData.title}</h3>
+                                <p className="text-sm text-[#1e3a5f]/50 text-center px-8">
                                     Animation Placeholder<br />
                                     ({activeStepData.image})
                                 </p>
@@ -126,7 +124,7 @@ export function TechniqueViewer({ technique }: TechniqueViewerProps) {
                     </AnimatePresence>
 
                     {/* Overlay Gradient */}
-                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/50 to-transparent" />
+                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#e8f0f8]/50 to-transparent" />
                 </div>
             </div>
         </div>

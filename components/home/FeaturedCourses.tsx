@@ -11,47 +11,47 @@ export function FeaturedCourses() {
     const featured = courses.slice(0, 3)
 
     return (
-        <section className="py-24 bg-black">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">POPULAR COURSES</h2>
-                        <p className="text-muted-foreground max-w-xl text-lg">
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#1e3a5f] mb-4">POPULAR COURSES</h2>
+                        <p className="text-[#1e3a5f]/60 max-w-xl text-lg">
                             Start your journey with our most sought-after training programs designed for all skill levels.
                         </p>
                     </div>
-                    <Button variant="outline" asChild className="border-primary text-primary hover:bg-primary hover:text-black">
+                    <Button variant="outline" asChild className="border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white">
                         <Link href="/courses">View All Courses <ArrowRight className="ml-2 w-4 h-4" /></Link>
                     </Button>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {featured.map((course) => (
-                        <Card key={course.id} className="bg-neutral-900 border-white/10 hover:border-primary/50 transition-all duration-300 group overflow-hidden flex flex-col">
-                            <div className="aspect-video bg-neutral-800 relative overflow-hidden">
+                        <Card key={course.id} className="bg-white border-gray-200 hover:border-[#1e3a5f]/50 transition-all duration-300 group overflow-hidden flex flex-col shadow-sm">
+                            <div className="aspect-video bg-[#e8f0f8] relative overflow-hidden">
                                 {/* Placeholder Image */}
-                                <div className="absolute inset-0 bg-neutral-800 group-hover:scale-105 transition-transform duration-500" />
+                                <div className="absolute inset-0 bg-[#e8f0f8] group-hover:scale-105 transition-transform duration-500" />
                                 <div className="absolute top-4 left-4">
-                                    <Badge className="bg-black/50 backdrop-blur border-white/10 text-white hover:bg-black/70">{course.discipline}</Badge>
+                                    <Badge className="bg-[#1e3a5f] backdrop-blur border-[#1e3a5f] text-white hover:bg-[#264a73]">{course.discipline}</Badge>
                                 </div>
                             </div>
 
                             <CardHeader>
                                 <div className="flex justify-between items-start mb-2">
-                                    <Badge variant="outline" className="border-primary/50 text-primary">{course.level}</Badge>
-                                    <span className="text-white font-bold">{course.price}</span>
+                                    <Badge variant="outline" className="border-[#1e3a5f]/50 text-[#1e3a5f]">{course.level}</Badge>
+                                    <span className="text-[#1e3a5f] font-bold">{course.price}</span>
                                 </div>
-                                <CardTitle className="text-2xl text-white group-hover:text-primary transition-colors line-clamp-1">{course.title}</CardTitle>
+                                <CardTitle className="text-2xl text-[#1e3a5f] group-hover:text-[#3d79ad] transition-colors line-clamp-1">{course.title}</CardTitle>
                             </CardHeader>
 
                             <CardContent className="flex-grow">
-                                <p className="text-muted-foreground line-clamp-3">
+                                <p className="text-[#1e3a5f]/60 line-clamp-3">
                                     {course.description}
                                 </p>
                             </CardContent>
 
-                            <CardFooter className="flex flex-col gap-4 border-t border-white/5 pt-6 mt-auto">
-                                <div className="flex items-center justify-between w-full text-sm text-neutral-400">
+                            <CardFooter className="flex flex-col gap-4 border-t border-gray-200 pt-6 mt-auto">
+                                <div className="flex items-center justify-between w-full text-sm text-[#1e3a5f]/60">
                                     <div className="flex items-center gap-2">
                                         <Clock className="w-4 h-4" />
                                         <span>{course.duration}</span>
@@ -61,7 +61,7 @@ export function FeaturedCourses() {
                                         <span>{course.instructor}</span>
                                     </div>
                                 </div>
-                                <Button className="w-full bg-white/10 text-white hover:bg-primary hover:text-black transition-all group-arrow">
+                                <Button className="w-full bg-[#e8f0f8] text-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white transition-all">
                                     Details
                                 </Button>
                             </CardFooter>

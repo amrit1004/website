@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold-500: #D4AF37;
-  --color-gold-600: #C5A028;
-  --color-gold-400: #E5C558;
+  --color-navy-900: #1e3a5f;
+  --color-navy-800: #264a73;
+  --color-navy-700: #2d5a87;
+  --color-navy-600: #35699a;
+  --color-navy-500: #3d79ad;
+  --color-navy-400: #5a8fc0;
+  --color-navy-300: #7ba5d0;
+  --color-navy-200: #a3c1e0;
+  --color-navy-100: #ccddf0;
+  --color-navy-50: #e8f0f8;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -33,36 +40,58 @@
 }
 
 :root {
-  --background: 0 0% 0%;
-  /* Black */
-  --foreground: 60 5% 96%;
-  /* Off-white */
+  --background: 0 0% 100%;
+  /* White */
+  --foreground: 212 52% 24%;
+  /* Dark navy text */
 
-  --primary: 46 65% 52%;
-  /* Gold */
-  --primary-foreground: 0 0% 0%;
+  --primary: 212 52% 24%;
+  /* Navy blue */
+  --primary-foreground: 0 0% 100%;
+  /* White */
 
-  --secondary: 0 0% 9%;
-  --secondary-foreground: 60 5% 96%;
+  --secondary: 210 20% 96%;
+  /* Light gray-blue */
+  --secondary-foreground: 212 52% 24%;
 
-  --muted: 0 0% 15%;
-  --muted-foreground: 240 5% 65%;
+  --muted: 210 20% 94%;
+  --muted-foreground: 212 30% 45%;
 
-  --accent: 0 0% 15%;
-  --accent-foreground: 60 5% 96%;
+  --accent: 212 52% 24%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 60 5% 96%;
+  --destructive: 0 62.8% 50%;
+  --destructive-foreground: 0 0% 100%;
 
-  --border: 0 0% 15%;
-  --input: 0 0% 15%;
-  --ring: 46 65% 52%;
+  --border: 210 20% 88%;
+  --input: 210 20% 88%;
+  --ring: 212 52% 24%;
 
   --radius: 0.5rem;
+
+  --card: 0 0% 100%;
+  --card-foreground: 212 52% 24%;
 }
 
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-outfit), sans-serif;
+}
+
+/* Utility classes for the navy theme */
+.bg-navy {
+  background-color: #1e3a5f;
+}
+
+.bg-navy-light {
+  background-color: #264a73;
+}
+
+.text-navy {
+  color: #1e3a5f;
+}
+
+.border-navy {
+  border-color: #1e3a5f;
 }

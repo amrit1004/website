@@ -2,78 +2,104 @@
 
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Crosshair } from "lucide-react"
+import { Target } from "lucide-react"
 import Link from "next/link"
 
 export function Hero() {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black px-4">
-            {/* Background with Gradient Overlay */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black z-10" />
-                <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-900 via-black to-black opacity-80" />
-                {/* Placeholder for Hero Image/Video */}
-                <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1595188682220-413158461778?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+            <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Content */}
+                    <div>
+                        {/* Badge */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#1e3a5f]/20 bg-[#1e3a5f]/5 mb-8"
+                        >
+                            <Target className="w-4 h-4 text-[#1e3a5f]" />
+                            <span className="text-sm font-semibold tracking-widest text-[#1e3a5f] uppercase">
+                                National Rifle Association of India
+                            </span>
+                        </motion.div>
+
+                        {/* Heading */}
+                        <motion.h1
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#1e3a5f] mb-6 leading-[1.1]"
+                        >
+                            Empowering India&apos;s{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">
+                                Shooting Excellence
+                            </span>
+                        </motion.h1>
+
+                        {/* Subtext */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="text-lg md:text-xl text-[#1e3a5f]/60 max-w-2xl mb-10 leading-relaxed"
+                        >
+                            The governing body of shooting sports in India — nurturing world-class
+                            athletes, organizing national championships, and building a legacy of
+                            precision and pride on the global stage.
+                        </motion.p>
+
+                        {/* CTA Buttons */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                            className="flex flex-col sm:flex-row items-start gap-4"
+                        >
+                            <Link href="/events/championships">
+                                <Button size="lg" className="h-14 px-8 text-base rounded-md bg-[#1e3a5f] text-white hover:bg-[#264a73] font-bold">
+                                    View Championships
+                                </Button>
+                            </Link>
+                            <Link href="/athletes/shooters">
+                                <Button size="lg" variant="outline" className="h-14 px-8 text-base rounded-md border-[#1e3a5f]/30 text-[#1e3a5f] hover:bg-[#1e3a5f]/5 font-semibold">
+                                    Explore Athletes
+                                </Button>
+                            </Link>
+                        </motion.div>
+                    </div>
+
+                    {/* Right Image */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 0.4 }}
+                        className="hidden lg:flex justify-center items-center"
+                    >
+                        <div className="relative">
+                            {/* Decorative ring */}
+                            <div className="absolute -inset-4 rounded-full border-2 border-[#1e3a5f]/10 animate-pulse" />
+                            <div className="absolute -inset-8 rounded-full border border-[#1e3a5f]/5" />
+                            <div className="relative w-[420px] h-[420px] rounded-full overflow-hidden border-4 border-[#1e3a5f]/20 shadow-2xl shadow-[#1e3a5f]/10">
+                                <img
+                                    src="https://images.unsplash.com/photo-1595590424283-b8f17842773f?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Shooter aiming at target"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
+                            </div>
+                            {/* Crosshair decoration */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] pointer-events-none">
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 bg-[#1e3a5f]/15" />
+                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-8 bg-[#1e3a5f]/15" />
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-px w-8 bg-[#1e3a5f]/15" />
+                                <div className="absolute right-0 top-1/2 -translate-y-1/2 h-px w-8 bg-[#1e3a5f]/15" />
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
-
-            <div className="relative z-10 container mx-auto text-center">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary mb-8"
-                >
-                    <Crosshair className="w-4 h-4" />
-                    <span className="text-sm font-medium tracking-wide">ELITE SHOOTING ACADEMY</span>
-                </motion.div>
-
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white mb-6"
-                >
-                    FORGE YOUR <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#F7D886] to-primary">
-                        LEGACY
-                    </span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
-                >
-                    Master the art of precision at Mohali’s premier shooting arena.
-                    World-class coaching, state-of-the-art ranges, and a community of champions.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
-                >
-                    <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-black hover:bg-primary/90">
-                        Start Your Journey
-                    </Button>
-                    <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-white/20 text-white hover:bg-white/10">
-                        Explore Facilities
-                    </Button>
-                </motion.div>
-            </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-            >
-                <span className="text-[10px] tracking-[0.2em] text-white/40 uppercase">Scroll</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-primary/0 via-primary to-primary/0" />
-            </motion.div>
         </section>
     )
 }

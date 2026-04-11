@@ -1,84 +1,128 @@
 import Link from "next/link"
-import { Crosshair, Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react"
+import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from "lucide-react"
+
+const footerLinks = [
+    {
+        title: "About",
+        links: [
+            { name: "About NRAI", href: "/about" },
+            { name: "Committee", href: "/about/committee" },
+            { name: "Constitution", href: "/about/constitution" },
+        ],
+    },
+    {
+        title: "Events",
+        links: [
+            { name: "Championships", href: "/events/championships" },
+            { name: "Calendar", href: "/events/calendar" },
+            { name: "Results", href: "/events/results" },
+        ],
+    },
+    {
+        title: "Athletes",
+        links: [
+            { name: "Shooters", href: "/athletes/shooters" },
+            { name: "Rankings", href: "/athletes/rankings" },
+            { name: "Shooting League", href: "/shooting-league" },
+        ],
+    },
+    {
+        title: "Resources",
+        links: [
+            { name: "Downloads", href: "/resources/downloads" },
+            { name: "Selection Criteria", href: "/resources/selection-criteria" },
+            { name: "Notification", href: "/notification" },
+            { name: "Archives", href: "/archives" },
+        ],
+    },
+    {
+        title: "Media",
+        links: [
+            { name: "News", href: "/media/news" },
+            { name: "Gallery", href: "/media/gallery" },
+            { name: "Videos", href: "/media/videos" },
+            { name: "Newsletter", href: "/newsletter" },
+        ],
+    },
+]
+
+const socials = [
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Youtube, href: "#", label: "YouTube" },
+]
 
 export function Footer() {
     return (
-        <footer className="bg-black border-t border-white/10 pt-16 pb-8">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <footer className="bg-[#0d1f33] text-white">
+            <div className="container mx-auto px-4 py-10">
+                {/* Top row: brand + links inline */}
+                <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
 
-                    {/* Brand */}
-                    <div className="space-y-4">
-                        <Link href="/" className="flex items-center gap-2 group">
-                            <Crosshair className="h-6 w-6 text-primary" />
-                            <div className="flex flex-col">
-                                <span className="text-lg font-bold tracking-tighter text-white leading-none">
-                                    SALVO
-                                </span>
-                            </div>
+                    {/* Brand + Contact compact */}
+                    <div className="lg:w-72 shrink-0 space-y-4">
+                        <Link href="/" className="inline-block">
+                            <img src="/logo.svg" alt="NRAI" className="h-12 w-auto object-contain" />
                         </Link>
-                        <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-                            Premier shooting academy in Mohali. Dedicated to forging champions through precision, discipline, and advanced technique training.
-                        </p>
-                        <div className="flex gap-4">
-                            <Link href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-white/60 hover:text-primary transition-colors">
-                                <Instagram className="h-4 w-4" />
-                            </Link>
-                            <Link href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-white/60 hover:text-primary transition-colors">
-                                <Facebook className="h-4 w-4" />
-                            </Link>
-                            <Link href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-white/60 hover:text-primary transition-colors">
-                                <Twitter className="h-4 w-4" />
-                            </Link>
+                        <div className="flex flex-col gap-2 text-xs text-white/50">
+                            <div className="flex items-start gap-2">
+                                <MapPin className="h-3.5 w-3.5 text-amber-400 shrink-0 mt-0.5" />
+                                <span>SCO 15, Preet City, Sector 86, SAS Nagar, Punjab 140308</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Phone className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+                                <span>+91 97003 30076</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Mail className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+                                <span>info@salvoarena.com</span>
+                            </div>
+                        </div>
+                        <div className="flex gap-2">
+                            {socials.map((social) => (
+                                <Link
+                                    key={social.label}
+                                    href={social.href}
+                                    aria-label={social.label}
+                                    className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:bg-amber-500 hover:border-amber-500 hover:text-white transition-all duration-300"
+                                >
+                                    <social.icon className="h-3.5 w-3.5" />
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div>
-                        <h3 className="text-white font-bold mb-6">Academy</h3>
-                        <ul className="space-y-3">
-                            <li><Link href="/courses" className="text-muted-foreground hover:text-primary transition-colors text-sm">Courses</Link></li>
-                            <li><Link href="/coaching" className="text-muted-foreground hover:text-primary transition-colors text-sm">Coaching</Link></li>
-                            <li><Link href="/facilities" className="text-muted-foreground hover:text-primary transition-colors text-sm">Facilities</Link></li>
-                            <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">About Us</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Technique */}
-                    <div>
-                        <h3 className="text-white font-bold mb-6">Technique</h3>
-                        <ul className="space-y-3">
-                            <li><Link href="/technique/10m-air-pistol" className="text-muted-foreground hover:text-primary transition-colors text-sm">10m Air Pistol</Link></li>
-                            <li><Link href="/technique/10m-air-rifle" className="text-muted-foreground hover:text-primary transition-colors text-sm">10m Air Rifle</Link></li>
-                            <li><Link href="/technique" className="text-muted-foreground hover:text-primary transition-colors text-sm">Resource Library</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div>
-                        <h3 className="text-white font-bold mb-6">Contact</h3>
-                        <ul className="space-y-4">
-                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                                <MapPin className="h-5 w-5 text-primary shrink-0" />
-                                <span>SCO 15, Preet City, opp. water tank,<br />Sector 86, Sahibzada Ajit Singh Nagar,<br />Punjab 140308</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                                <Phone className="h-4 w-4 text-primary shrink-0" />
-                                <span>+91 97003 30076</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                                <Mail className="h-4 w-4 text-primary shrink-0" />
-                                <span>info@salvoarena.com</span>
-                            </li>
-                        </ul>
+                    {/* Link columns */}
+                    <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                        {footerLinks.map((group) => (
+                            <div key={group.title}>
+                                <h3 className="text-xs font-bold uppercase tracking-wider text-white/80 mb-3">{group.title}</h3>
+                                <ul className="space-y-1.5">
+                                    {group.links.map((link) => (
+                                        <li key={link.name}>
+                                            <Link href={link.href} className="text-xs text-white/40 hover:text-amber-400 transition-colors">
+                                                {link.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </div>
+            </div>
 
-                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Salvo Shooters Arena. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <Link href="/privacy" className="text-xs text-muted-foreground hover:text-white">Privacy Policy</Link>
-                        <Link href="/terms" className="text-xs text-muted-foreground hover:text-white">Terms of Service</Link>
+            {/* Bottom Bar */}
+            <div className="border-t border-white/10">
+                <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-3">
+                    <p className="text-[11px] text-white/30">
+                        &copy; {new Date().getFullYear()} National Rifle Association of India. All rights reserved.
+                    </p>
+                    <div className="flex gap-5">
+                        <Link href="/privacy" className="text-[11px] text-white/30 hover:text-white/60 transition-colors">Privacy Policy</Link>
+                        <Link href="/terms" className="text-[11px] text-white/30 hover:text-white/60 transition-colors">Terms of Service</Link>
+                        <Link href="/rti" className="text-[11px] text-white/30 hover:text-white/60 transition-colors">RTI</Link>
                     </div>
                 </div>
             </div>

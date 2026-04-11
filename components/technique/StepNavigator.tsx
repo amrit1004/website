@@ -15,7 +15,7 @@ interface StepNavigatorProps {
 
 export function StepNavigator({ steps, activeStep, onStepClick }: StepNavigatorProps) {
     return (
-        <nav className="hidden lg:block sticky top-32 w-64 pr-8 border-r border-white/10 h-[calc(100vh-8rem)] overflow-y-auto step-nav-scrollbar">
+        <nav className="hidden lg:block sticky top-32 w-64 pr-8 border-r border-[#ccddf0] h-[calc(100vh-8rem)] overflow-y-auto step-nav-scrollbar">
             <ul className="space-y-8">
                 {steps.map((step, index) => (
                     <li key={step.id} className="relative group">
@@ -24,7 +24,7 @@ export function StepNavigator({ steps, activeStep, onStepClick }: StepNavigatorP
                             <div className={cn(
                                 "absolute left-4 top-8 h-[calc(100%+32px)] w-[1px] transition-colors duration-500 z-0",
                                 // Check if next step is active or passed
-                                activeStep === step.id ? "bg-gradient-to-b from-primary to-neutral-800" : "bg-neutral-800"
+                                activeStep === step.id ? "bg-gradient-to-b from-[#1e3a5f] to-[#ccddf0]" : "bg-[#ccddf0]"
                             )} />
                         )}
 
@@ -32,22 +32,22 @@ export function StepNavigator({ steps, activeStep, onStepClick }: StepNavigatorP
                             onClick={() => onStepClick(step.id)}
                             className={cn(
                                 "text-left w-full group flex items-start gap-4 transition-all duration-300 relative z-10",
-                                activeStep === step.id ? "text-primary" : "text-neutral-500 hover:text-white"
+                                activeStep === step.id ? "text-[#1e3a5f]" : "text-[#1e3a5f]/50 hover:text-[#1e3a5f]"
                             )}
                         >
                             <div
                                 className={cn(
-                                    "w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold transition-all duration-300 shrink-0 bg-black",
+                                    "w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold transition-all duration-300 shrink-0 bg-white",
                                     activeStep === step.id
-                                        ? "border-primary text-primary shadow-[0_0_15px_rgba(212,175,55,0.3)]"
-                                        : "border-neutral-800 text-neutral-600 group-hover:border-neutral-600 group-hover:text-neutral-400"
+                                        ? "border-[#1e3a5f] text-[#1e3a5f] shadow-[0_0_15px_rgba(30,58,95,0.3)]"
+                                        : "border-[#ccddf0] text-[#1e3a5f]/40 group-hover:border-[#1e3a5f]/50 group-hover:text-[#1e3a5f]/60"
                                 )}
                             >
                                 {index + 1}
                             </div>
                             <span className={cn(
                                 "text-sm font-medium transition-all duration-300 pt-1.5",
-                                activeStep === step.id ? "text-primary scale-105 origin-left font-bold" : ""
+                                activeStep === step.id ? "text-[#1e3a5f] scale-105 origin-left font-bold" : ""
                             )}>
                                 {step.title.replace(/^\d+\.\s*/, '')}
                             </span>
