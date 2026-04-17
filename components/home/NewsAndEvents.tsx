@@ -50,7 +50,7 @@ export function NewsAndEvents() {
                             Stay updated with the latest announcements, schedules, and registrations.
                         </p>
                     </div>
-                    <Link href="/about">
+                    <Link href="/media/news">
                         <Button variant="outline" className="border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white font-semibold">
                             View All News <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>

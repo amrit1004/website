@@ -72,7 +72,7 @@ export function Videos() {
                             Watch highlights, finals, and training sessions from top shooting events.
                         </p>
                     </div>
-                    <Link href="/gallery">
+                    <Link href="/media/videos">
                         <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 font-semibold">
                             View All <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
